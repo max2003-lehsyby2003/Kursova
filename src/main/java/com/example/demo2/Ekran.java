@@ -34,7 +34,7 @@ GameButton gameButton = new GameButton();
 
             root.getChildren().add(gridPane);
             stage.setScene(new Scene(root, 300, 300));
-            stage.setTitle("Tic-Tac-Toe");
+            stage.setTitle("krestuki-noliki");
             stage.show();
 
 
