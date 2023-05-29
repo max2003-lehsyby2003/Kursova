@@ -11,9 +11,10 @@ import javafx.stage.Stage;
 
 public class Ekran extends Application{
 
-GameButton gameButton = new GameButton();
 
-    public Button[][] buttons = new Button[3][3];
+public Button[][] buttons = new Button[3][3];
+//
+GameButton gameButton = new GameButton();
     public Stage stage;
     //создание игрового окна
         @Override
@@ -40,8 +41,11 @@ GameButton gameButton = new GameButton();
 
         }
 
+
+
         public static void main(String[] args) {
             launch();
+
         }
     }
 
