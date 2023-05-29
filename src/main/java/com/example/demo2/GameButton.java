@@ -3,9 +3,11 @@ package com.example.demo2;
 import javafx.scene.control.Button;
 
 public class GameButton {
-    Board board = new Board();
-    public boolean isPlayerXTurn = true;
-    CheckGameOver checkGameOver = new CheckGameOver();
+
+
+
+    LogikGame checkGameOver = new LogikGame();
+    boolean isPlayerXTurn = checkGameOver.getIsPlayerXTurn();
     // Собирает и компонирует все функции игровой кнопки
     public Button gameButton() {
         Button button = new Button();
@@ -16,7 +18,7 @@ public class GameButton {
                     ((Button) event.getSource()).setText("X");
                     ((Button) event.getSource()).setDisable(true);
                     isPlayerXTurn = false;
-                    board.updateBoard(((Button) event.getSource()), 'X');
+                    checkGameOver.updateBoard(((Button) event.getSource()), 'X');
                     if (checkGameOver.checkGameOver('X')) {
                         checkGameOver.showGameOverDialog("X");
                     }
@@ -24,7 +26,7 @@ public class GameButton {
                     ((Button) event.getSource()).setText("O");
                     ((Button) event.getSource()).setDisable(true);
                     isPlayerXTurn = true;
-                    board.updateBoard(((Button) event.getSource()), 'O');
+                    checkGameOver.updateBoard(((Button) event.getSource()), 'O');
                     if (checkGameOver.checkGameOver('O')) {
                         checkGameOver.showGameOverDialog("O");
                     }

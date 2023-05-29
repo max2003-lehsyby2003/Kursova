@@ -4,19 +4,33 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class CheckGameOver {
+public class LogikGame {
+
     public char[][] board = new char[3][3];
-
-   public Button[][] buttons = new Button[3][3];
-    public Stage stage;
     public boolean isPlayerXTurn = true;
+    public Button[][] buttons = new Button[3][3];
+
+    public Stage stage;
+    public Button[][] getButtons(){
+        return  buttons;
+    }
+    public boolean getIsPlayerXTurn(){
+        return isPlayerXTurn;
+    }
+    //Обновление игры после действия игрока
+    public void updateBoard(Button button, char player) {
+        int row = GridPane.getRowIndex(button);
+        int col = GridPane.getColumnIndex(button);
+        board[row][col] = player;
+    }
 
 
-    //Условия чтрбы выйграть чтобы выйграть
+    //Условия чтобы выйграть чтобы выйграть
     public boolean checkGameOver(char player) {
         // Проверка по горизонтали и вертикали
         for (int i = 0; i < 3; i++) {
