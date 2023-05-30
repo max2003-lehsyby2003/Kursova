@@ -20,7 +20,7 @@ public class GameButton {
                     isPlayerXTurn = false;
                     checkGameOver.updateBoard(((Button) event.getSource()), 'X');
                     if (checkGameOver.checkGameOver('X')) {
-                        checkGameOver.showGameOverDialog("X");
+                        checkGameOver.showGameDialog("X");
                     }
                 } else {
                     ((Button) event.getSource()).setText("O");
@@ -28,7 +28,7 @@ public class GameButton {
                     isPlayerXTurn = true;
                     checkGameOver.updateBoard(((Button) event.getSource()), 'O');
                     if (checkGameOver.checkGameOver('O')) {
-                        checkGameOver.showGameOverDialog("O");
+                        checkGameOver.showGameDialog("O");
                     }
                 }
             }

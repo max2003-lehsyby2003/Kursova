@@ -60,14 +60,14 @@ public class LogikGame {
             }
         }
         if (isBoardFull) {
-            showGameOverDialog("Ничья");
+            showGameDialog("Ничья");
             return true;
         }
 
         return false;
     }
     //Диалоговое окно после игры с запросом у пользователя начать заново или выйти
-    public void showGameOverDialog(String winner) {
+    public void showGameDialog(String winner) {
         Stage dialog = new Stage();
         dialog.initOwner(stage);
         dialog.setTitle("Game Over");
